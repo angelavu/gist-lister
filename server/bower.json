@@ -1,0 +1,21 @@
+{
+  "name": "gist-lister",
+  "version": "0.0.0",
+  "authors": [
+    "Angela Vu"
+  ],
+  "description": "bower",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1"
+  }
+}

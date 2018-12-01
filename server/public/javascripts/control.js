@@ -1,0 +1,3 @@
+window.onload = () => {
+    'use strict';
+};
