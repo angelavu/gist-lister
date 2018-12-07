@@ -16,7 +16,7 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
         backgroundColor: '#fff',
         margin: '2em'
-    },
+    }
 });
 
 class ShowNewGist extends Component {
@@ -118,7 +118,11 @@ class ShowNewGist extends Component {
                     </p>
                     <p className="App-intro">
                         Git Pull URL:{' '}
-                        <a href={this.state.gitGist[this.state.index].gitPullUrl}>
+                        <a
+                            href={
+                                this.state.gitGist[this.state.index].gitPullUrl
+                            }
+                        >
                             {this.state.gitGist[this.state.index].gitPullUrl}
                         </a>
                     </p>
@@ -134,7 +138,10 @@ class ShowNewGist extends Component {
                         <p>
                             <img
                                 className="avatar"
-                                src={this.state.gitGist[this.state.index].avatarUrl}
+                                src={
+                                    this.state.gitGist[this.state.index]
+                                        .avatarUrl
+                                }
                                 alt="Git Avatar"
                             />
                         </p>
@@ -160,8 +167,8 @@ class ShowNewGist extends Component {
                         className="gist-button"
                         onClick={this.fetchGitList}
                     >
-                        <Icon className={classes.rightIcon}>account_box</Icon> Query
-                        Git Gists
+                        <Icon className={classes.rightIcon}>account_box</Icon>{' '}
+                        Query Git Gists
                     </Button>
 
                     <Button
@@ -175,7 +182,10 @@ class ShowNewGist extends Component {
                     </Button>
 
                     <pre>
-                        {this.state.index} / { this.state.gitCount === 0 ? '?' : this.state.gitCount - 1 }
+                        {this.state.index} /{' '}
+                        {this.state.gitCount === 0
+                            ? '?'
+                            : this.state.gitCount - 1}
                     </pre>
                 </Paper>
             </div>

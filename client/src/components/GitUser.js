@@ -16,7 +16,7 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
         backgroundColor: '#fff',
         margin: '2em'
-    },
+    }
 });
 
 class GitUser extends Component {
@@ -57,7 +57,9 @@ class GitUser extends Component {
                     <p className="App-intro">
                         Git Public Repos: {this.state.public_repos}
                     </p>
-                    <p className="App-intro">Git HTML URL: {this.state.html_url}</p>
+                    <p className="App-intro">
+                        Git HTML URL: {this.state.html_url}
+                    </p>
                     <div>
                         <p>
                             <img
@@ -74,8 +76,8 @@ class GitUser extends Component {
                         color="primary"
                         onClick={this.queryGithubUser}
                     >
-                        <Icon className={classes.rightIcon}>account_box</Icon> Query
-                        Git user
+                        <Icon className={classes.rightIcon}>account_box</Icon>{' '}
+                        Query Git user
                     </Button>
                 </Paper>
             </div>
