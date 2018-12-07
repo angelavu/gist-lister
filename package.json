@@ -1,5 +1,5 @@
 {
-  "name": "lookup-server",
+  "name": "gist-lister",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
+    "prestart": "cd client/ && npm install && cd ../server/ && npm install && cd .. && npm install",
     "server": "node server/bin/www",
     "client": "babel-node start-client.js",
     "lint": "./node_modules/.bin/eslint ."
