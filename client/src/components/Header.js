@@ -21,7 +21,7 @@ const styles = {
     }
 };
 
-class ElfHeader extends Component {
+class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -75,8 +75,8 @@ class ElfHeader extends Component {
     }
 }
 
-ElfHeader.propTypes = {
+Header.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ElfHeader);
+export default withStyles(styles)(Header);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import ElfHeader from './ElfHeader';
+import Header from './Header';
 import GitUser from './GitUser';
 import ShowNewGist from './ShowNewGist';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="App">
-                    <ElfHeader />
+                    <Header />
                     <Route exact path="/" component={GitUser} />
                     <Route
                         exact

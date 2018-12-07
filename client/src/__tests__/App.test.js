@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../components/App';
-import ElfHeader from '../components/ElfHeader';
+import ElfHeader from '../components/Header';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, shallow } from 'enzyme';
