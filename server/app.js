@@ -27,10 +27,10 @@ app.use('/git-api', gitApi);
 app.use('/gists', gists);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    'use strict';
-    next(createError(404));
-});
+app.use(function (err, req, res, next) {
+    console.error(err.stack)
+    res.status(500).send('Something broke!')
+})
 
 // error handler
 app.use(function(err, req, res) {
