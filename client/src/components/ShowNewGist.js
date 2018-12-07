@@ -162,7 +162,7 @@ class ShowNewGist extends Component {
                 </Button>
 
                 <pre>
-                    {this.state.index} / {this.state.gitCount - 1}
+                    {this.state.index} / { this.state.gitCount === 0 ? '?' : this.state.gitCount - 1 }
                 </pre>
             </div>
         );
