@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= 'gist-lister server'
+  p Welcome to 'gist-lister server'
+  p Query GitHub Profile:
+    a(href='/git-api/user')  User Route
+  p Query GitHub Gists:
+    a(href='/gists/get-basic-list')  Gists Route
