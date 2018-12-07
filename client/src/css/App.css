@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -27,3 +27,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.avatar {
+  max-width: 200px;
+}
+
+.gist-button {
+  margin-right: 2em !important;
+}
+
+.gist-button:last-child {
+  margin-right: initial !important;
+}
+
+div[class^="MuiPaper-"] {
+  overflow-wrap: break-word !important;
+}
+/*.Main-app {*/
+  /*width: 50%;*/
+  /*margin: 0 auto;*/
+/*}*/

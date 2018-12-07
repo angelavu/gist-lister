@@ -22,7 +22,7 @@ describe('Header Tests', function() {
         ReactDOM.render(
             <MuiThemeProvider theme={themeDark}>
                 <BrowserRouter>
-                    <ElfHeader />
+                    <Header />
                 </BrowserRouter>
             </MuiThemeProvider>,
             div

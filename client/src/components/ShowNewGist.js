@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
     rightIcon: {
         marginLeft: theme.spacing.unit
-    }
+    },
+    root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+        backgroundColor: '#fff',
+        margin: '2em'
+    },
 });
 
 class ShowNewGist extends Component {
@@ -97,73 +105,79 @@ class ShowNewGist extends Component {
         return (
             <div className="App">
                 {/*get Git info*/}
-                <p className="App-intro">
-                    Git HTML URL:{' '}
-                    <a href={this.state.gitGist[this.state.index].htmlUrl}>
-                        {this.state.gitGist[this.state.index].htmlUrl}
-                    </a>
-                </p>
-                <p className="App-intro">
-                    Git ID: {this.state.gitGist[this.state.index].id}
-                </p>
-                <p className="App-intro">
-                    Git Pull URL:{' '}
-                    <a href={this.state.gitGist[this.state.index].gitPullUrl}>
-                        {this.state.gitGist[this.state.index].gitPullUrl}
-                    </a>
-                </p>
-                <p className="App-intro">
-                    Git Description:{' '}
-                    {this.state.gitGist[this.state.index].description}
-                </p>
-                <p className="App-intro">
-                    Git Owner Login:{' '}
-                    {this.state.gitGist[this.state.index].ownerLogin}
-                </p>
-                <div>
-                    <p>
-                        <img
-                            className="avatar"
-                            src={this.state.gitGist[this.state.index].avatarUrl}
-                            alt="Git Avatar"
-                        />
+                <Paper className={classes.root} elevation={1}>
+                    <h1>Query Angela's Gists</h1>
+                    <p className="App-intro">
+                        Git HTML URL:{' '}
+                        <a href={this.state.gitGist[this.state.index].htmlUrl}>
+                            {this.state.gitGist[this.state.index].htmlUrl}
+                        </a>
                     </p>
-                </div>
-                <p className="App-intro">
-                    Git Files: {this.state.gitGist[this.state.index].files}
-                </p>
+                    <p className="App-intro">
+                        Git ID: {this.state.gitGist[this.state.index].id}
+                    </p>
+                    <p className="App-intro">
+                        Git Pull URL:{' '}
+                        <a href={this.state.gitGist[this.state.index].gitPullUrl}>
+                            {this.state.gitGist[this.state.index].gitPullUrl}
+                        </a>
+                    </p>
+                    <p className="App-intro">
+                        Git Description:{' '}
+                        {this.state.gitGist[this.state.index].description}
+                    </p>
+                    <p className="App-intro">
+                        Git Owner Login:{' '}
+                        {this.state.gitGist[this.state.index].ownerLogin}
+                    </p>
+                    <div>
+                        <p>
+                            <img
+                                className="avatar"
+                                src={this.state.gitGist[this.state.index].avatarUrl}
+                                alt="Git Avatar"
+                            />
+                        </p>
+                    </div>
+                    <p className="App-intro">
+                        Git Files: {this.state.gitGist[this.state.index].files}
+                    </p>
 
-                <Button
-                    id="prevGist"
-                    variant="raised"
-                    color="primary"
-                    onClick={e => this.gistIterator('prevGist', e)}
-                >
-                    Back
-                </Button>
+                    <Button
+                        id="prevGist"
+                        variant="raised"
+                        color="primary"
+                        className="gist-button"
+                        onClick={e => this.gistIterator('prevGist', e)}
+                    >
+                        Back
+                    </Button>
 
-                <Button
-                    id="queryGitGistsBtn"
-                    variant="raised"
-                    color="primary"
-                    onClick={this.fetchGitList}
-                >
-                    <Icon className={classes.rightIcon}>account_box</Icon> Query
-                    Git Gists
-                </Button>
+                    <Button
+                        id="queryGitGistsBtn"
+                        variant="raised"
+                        color="primary"
+                        className="gist-button"
+                        onClick={this.fetchGitList}
+                    >
+                        <Icon className={classes.rightIcon}>account_box</Icon> Query
+                        Git Gists
+                    </Button>
 
-                <Button
-                    id="nextGist"
-                    variant="raised"
-                    color="primary"
-                    onClick={e => this.gistIterator('nextGist', e)}
-                >
-                    Next
-                </Button>
+                    <Button
+                        id="nextGist"
+                        variant="raised"
+                        color="primary"
+                        className="gist-button"
+                        onClick={e => this.gistIterator('nextGist', e)}
+                    >
+                        Next
+                    </Button>
 
-                <pre>
-                    {this.state.index} / { this.state.gitCount === 0 ? '?' : this.state.gitCount - 1 }
-                </pre>
+                    <pre>
+                        {this.state.index} / { this.state.gitCount === 0 ? '?' : this.state.gitCount - 1 }
+                    </pre>
+                </Paper>
             </div>
         );
     }
